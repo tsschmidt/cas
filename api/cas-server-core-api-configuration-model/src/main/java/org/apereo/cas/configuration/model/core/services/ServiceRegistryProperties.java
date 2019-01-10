@@ -10,6 +10,7 @@ import org.apereo.cas.configuration.model.support.ldap.serviceregistry.LdapServi
 import org.apereo.cas.configuration.model.support.mongo.serviceregistry.MongoDbServiceRegistryProperties;
 import org.apereo.cas.configuration.model.support.quartz.SchedulingProperties;
 import org.apereo.cas.configuration.model.support.redis.RedisServiceRegistryProperties;
+import org.apereo.cas.configuration.model.support.services.git.GitServiceRegistryProperties;
 import org.apereo.cas.configuration.model.support.services.json.JsonServiceRegistryProperties;
 import org.apereo.cas.configuration.model.support.services.stream.StreamingServiceRegistryProperties;
 import org.apereo.cas.configuration.model.support.services.yaml.YamlServiceRegistryProperties;
@@ -60,6 +61,11 @@ public class ServiceRegistryProperties implements Serializable {
      */
     @NestedConfigurationProperty
     private JsonServiceRegistryProperties json = new JsonServiceRegistryProperties();
+    /**
+     * Properties pertaining to JSON service registry initialized and synced to remote Git repository.
+     */
+    @NestedConfigurationProperty
+    private GitServiceRegistryProperties git = new GitServiceRegistryProperties();
     /**
      * Properties pertaining to YAML service registry.
      */

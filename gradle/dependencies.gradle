@@ -3519,5 +3519,12 @@ ext.libraries = [
                 dependencies.create("org.webjars.bower:bootstrap-select:$bootstrapSelectVersion") {
                     force = true
                 }
-        ]
+        ],
+        git                   :
+                dependencies.create("org.eclipse.jgit:org.eclipse.jgit:$jgitVersion") {
+                    exclude group: 'org.apache.httpcomponents', module: 'httpclient'
+                    exclude group: 'org.slf4j', module: 'slf4j'
+                    exclude group: 'org.slf4j', module: 'slf4j-api'
+                    exclude group: 'org.apache.commons', module: 'commons-lang3'
+                },
 ]
